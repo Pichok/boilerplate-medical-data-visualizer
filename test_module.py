@@ -11,15 +11,15 @@ class CatPlotTestCase(unittest.TestCase):
     
     def test_line_plot_labels(self):
         actual = self.ax.get_xlabel()
-        expected = "variable"
+        expected = "Variável"
         self.assertEqual(actual, expected, "Expected line plot xlabel to be 'variable'")
         actual = self.ax.get_ylabel()
-        expected = "total"
+        expected = "Total"
         self.assertEqual(actual, expected, "Expected line plot ylabel to be 'total'")
         actual = []
         for label in self.ax.get_xaxis().get_majorticklabels():
             actual.append(label.get_text())
-        expected = ['active', 'alco', 'cholesterol', 'gluc', 'overweight', 'smoke']
+        expected = ['ativo', 'etilista', 'colesterol', 'glicemia', 'sobrepeso', 'tabagista']
         self.assertEqual(actual, expected, "Expected bar plot secondary x labels to be 'active', 'alco', 'cholesterol', 'gluc', 'overweight', 'smoke'")
 
     def test_bar_plot_number_of_bars(self):
